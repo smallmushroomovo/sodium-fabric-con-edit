@@ -244,6 +244,8 @@ public class SodiumOptionsGUI extends Screen implements ScreenPromptable {
         this.updateControls();
         this.renderBackground(drawContext);
 
+        super.renderBackground(drawContext);
+
         super.render(drawContext, this.prompt != null ? -1 : mouseX, this.prompt != null ? -1 : mouseY, delta);
 
         if (this.hoveredElement != null) {

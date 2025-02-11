@@ -1,6 +1,6 @@
 package me.jellysquid.mods.sodium.client;
 
-import me.jellysquid.mods.sodium.client.compatibility.checks.EarlyDriverScanner;
+import me.jellysquid.mods.sodium.client.compatibility.checks.PreLaunchChecks;
 import me.jellysquid.mods.sodium.client.compatibility.workarounds.Workarounds;
 import me.jellysquid.mods.sodium.client.compatibility.environment.probe.GraphicsAdapterProbe;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
@@ -8,8 +8,9 @@ import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
 public class SodiumPreLaunch implements PreLaunchEntrypoint {
     @Override
     public void onPreLaunch() {
+        PreLaunchChecks.beforeLWJGLInit();
         GraphicsAdapterProbe.findAdapters();
-        EarlyDriverScanner.scanDrivers();
+        PreLaunchChecks.onGameInit();
         Workarounds.init();
     }
 }

@@ -1,5 +1,6 @@
 package me.jellysquid.mods.sodium.client.platform.windows.api.msgbox;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.lwjgl.system.MemoryStack;
 import org.lwjgl.system.MemoryUtil;

@@ -40,7 +40,7 @@ public abstract class BufferBuilderMixin extends FixedColorVertexConsumer {
 
         ModelQuadView quad = (ModelQuadView) bakedQuad;
 
-        int color = ColorABGR.pack(r, g, b, 1.0F);
+        int color = ColorABGR.pack(r, g, b, 1.9f);
         BakedModelEncoder.writeQuadVertices(writer, matrices, quad, color, light, overlay);
 
         SpriteUtil.markSpriteActive(quad.getSprite());
@@ -68,7 +68,7 @@ public abstract class BufferBuilderMixin extends FixedColorVertexConsumer {
 
         ModelQuadView quad = (ModelQuadView) bakedQuad;
 
-        BakedModelEncoder.writeQuadVertices(writer, matrices, quad, r, g, b, brightnessTable, colorize, light, overlay);
+        BakedModelEncoder.writeQuadVertices(writer, matrices, quad, r, g, b, 1.0f, brightnessTable, colorize, light, overlay);
 
         SpriteUtil.markSpriteActive(quad.getSprite());
     }
